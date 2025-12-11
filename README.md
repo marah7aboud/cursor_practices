@@ -31,7 +31,7 @@ PORT=8000
 ### 3. Run the Application
 
 ```bash
-python app.py
+python run.py
 ```
 
 ### 4. Access the API
@@ -83,7 +83,7 @@ cursor_practices/
 │       └── responses.py           # Response models
 ├── docs/
 │   └── IMPLEMENTATION_STEPS.md    # Implementation documentation
-├── app.py                   # Entry point
+├── run.py                   # Entry point (renamed from app.py to avoid conflict with app/ package)
 ├── .env                     # Environment configuration
 ├── pyproject.toml          # Dependencies
 └── README.md               # This file

@@ -154,7 +154,7 @@ app/
 
 ## Step 8: Application Entry Point
 
-**File Created:** `app.py`
+**File Created:** `run.py` (originally `app.py`, renamed to avoid naming conflict)
 
 **Implementation:**
 - Reads PORT from environment variable (defaults to 8000)
@@ -162,11 +162,18 @@ app/
 - Configures logging level
 - Uses `app.main:app` to reference the FastAPI instance
 
+**Important Note:**
+- The file was renamed from `app.py` to `run.py` to avoid a naming conflict
+- Having both `app.py` (file) and `app/` (package) causes Python's import system to be ambiguous
+- When Uvicorn tries to load `"app.main:app"`, Python may resolve `app` to the file instead of the package
+- Renaming to `run.py` eliminates this conflict and ensures proper module resolution
+
 **Features:**
 - Environment-based configuration
 - Development-friendly (auto-reload)
 - Production-ready structure
 - Clear entry point for running the application
+- No naming conflicts with the application package
 
 ---
 
@@ -223,7 +230,7 @@ app/
 
 3. **Run the Application:**
    ```bash
-   python app.py
+   python run.py
    ```
 
 4. **Access the API:**
